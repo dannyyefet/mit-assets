@@ -1,0 +1,143 @@
+<!-- layout_suivi : copie de apps-script/layout.html (M1-M10) pour les mails transactionnels S1-S6 : sans bloc confiance 48-72h, sans 2e bouton, sans désinscription (18/10/2026) -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>GemSmile</title>
+  <style>
+    body { margin:0; padding:0; background:#ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color:#1a1a1a; -webkit-font-smoothing:antialiased; }
+    table { border-collapse: collapse; }
+    img { border:0; line-height:100%; outline:none; text-decoration:none; max-width:100%; height:auto; display:block; }
+    a { color:#F50037; text-decoration:none; }
+    .preheader { display:none; max-height:0; overflow:hidden; mso-hide:all; }
+  </style>
+</head>
+<body>
+
+  <div class="preheader">{{PREHEADER}}</div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;">
+    <tr>
+      <td align="center" style="padding:24px 0;">
+
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px; width:100%; background:#ffffff;">
+
+          <!-- Header logo (texte temporaire) -->
+          <tr>
+            <td align="center" style="padding:36px 16px 20px 16px;">
+              <a href="https://gemsmile.jewelry?{{UTM}}" target="_blank" style="text-decoration:none;">
+                <span style="font-family: Georgia, 'Times New Roman', serif; font-size:32px; font-weight:700; letter-spacing:0.5px; color:#1a1a1a;">GemSmile<sup style="font-size:0.4em; font-weight:500; vertical-align:super; letter-spacing:0;">TM</sup></span>
+              </a>
+            </td>
+          </tr>
+
+          <!-- Image hero (pleine largeur, bord à bord) -->
+          <tr>
+            <td style="padding:0; line-height:0; font-size:0;">
+              <img src="{{IMAGE_URL}}" alt="{{IMAGE_ALT}}" width="600" style="display:block; width:100%; max-width:600px; height:auto; border-radius:12px;">
+            </td>
+          </tr>
+
+          <!-- Titre -->
+          <tr>
+            <td align="center" style="padding:24px 16px 8px 16px;">
+              <h1 style="margin:0; font-size:28px; line-height:1.25; font-weight:700; color:#1a1a1a;">
+                {{TITRE}}
+              </h1>
+            </td>
+          </tr>
+
+          <!-- Sous-titre -->
+          <tr>
+            <td align="center" style="padding:0 16px 16px 16px;">
+              <p style="margin:0; font-size:16px; line-height:1.5; color:#666;">{{SOUS_TITRE}}</p>
+            </td>
+          </tr>
+
+          <!-- Texte principal -->
+          <tr>
+            <td style="padding:0 16px 24px 16px;">
+              <div style="font-size:15px; line-height:1.65; color:#333;">
+                {{TEXTE}}
+              </div>
+            </td>
+          </tr>
+
+          <!-- Bloc suivi La Poste (tous les mails) : icône + lien cliquable + numéro en clair -->
+          <tr>
+            <td align="center" style="padding:0 16px 28px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #d7e6e1; border-radius:12px; background:#F6FFFB;">
+                <tr>
+                  <td style="padding:14px 10px 14px 18px; vertical-align:middle;">
+                    <a href="{{LIEN_SUIVI}}" target="_blank"><img src="https://cdn.jsdelivr.net/gh/dannyyefet/mit-assets@main/gemsmile/emails/suivi/laposte-icone-96.png" alt="La Poste" width="40" height="40" style="display:block; width:40px; height:40px; border:0;"></a>
+                  </td>
+                  <td style="padding:14px 20px 14px 4px; vertical-align:middle; font-family:Arial, sans-serif;">
+                    <a href="{{LIEN_SUIVI}}" target="_blank" style="font-size:16px; font-weight:700; color:#0B2E2E; text-decoration:underline;">Suivre mon colis</a><br>
+                    <span style="font-size:13px; color:#555;">N° de suivi : <a href="{{LIEN_SUIVI}}" target="_blank" style="color:#0B2E2E; text-decoration:underline;"><strong style="color:#0B2E2E; letter-spacing:0.5px;">{{NUMERO_SUIVI}}</strong></a></span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Bouton : seulement si cta_texte est rempli dans l'onglet (sinon rien) -->
+          {{CTA_BLOC}}
+
+          <!-- Photos additionnelles optionnelles (colonnes image2Url / image3Url de la Sheet) -->
+          <tr>
+            <td style="padding:0;">{{EXTRA_IMAGES}}</td>
+          </tr>
+
+          <!-- Bloc social : icônes réseaux, puis logo GemSmile en dessous -->
+          <tr>
+            <td align="center" style="padding:32px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" align="center">
+                <tr>
+                  <td valign="middle" style="padding:0 10px;">
+                    <a href="https://www.instagram.com/gemsmile.jewelry" target="_blank">
+                      <img src="https://cdn.shopify.com/s/files/1/0646/1620/2508/files/instagram_120.png?v=1781049568" width="22" alt="Instagram" style="display:block; width:22px; height:auto;">
+                    </a>
+                  </td>
+                  <td valign="middle" style="padding:0 10px;">
+                    <a href="https://www.facebook.com/gemsmile.jewelry" target="_blank">
+                      <img src="https://cdn.shopify.com/s/files/1/0646/1620/2508/files/facebook_120.jpg?v=1781049568" width="22" alt="Facebook" style="display:block; width:22px; height:auto;">
+                    </a>
+                  </td>
+                  <td valign="middle" style="padding:0 10px;">
+                    <a href="https://www.tiktok.com/@gemsmile.jewelry" target="_blank">
+                      <img src="https://cdn.shopify.com/s/files/1/0646/1620/2508/files/tiktok_120.png?v=1781049568" width="22" alt="TikTok" style="display:block; width:22px; height:auto;">
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              <a href="https://gemsmile.jewelry?{{UTM}}" target="_blank" style="display:inline-block; margin-top:28px;">
+                <img src="https://gemsmile.jewelry/cdn/shop/files/logo_GemSmile_original_transparent.png?v=1678919854" width="40" alt="GemSmile" style="display:block; width:40px; height:auto; margin:0 auto;">
+              </a>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="padding:16px 16px 32px 16px; background:#ffffff;">
+              <p style="margin:0 0 8px 0; font-size:12px; color:#888; text-align:center; line-height:1.6;">
+                GemSmile · Kits Strass Dentaires DIY<br>
+                The Moustache Group · 10 rue Talma, 75016 Paris<br>
+                <a href="https://gemsmile.jewelry?{{UTM}}" target="_blank" style="color:#888;">gemsmile.jewelry</a> · <a href="mailto:info@gemsmile.jewelry" style="color:#888;">info@gemsmile.jewelry</a>
+              </p>
+              <p style="margin:8px 0 0 0; font-size:12px; color:#888; text-align:center;">
+                Mail de suivi de ta commande GemSmile.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+
+</body>
+</html>
